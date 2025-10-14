@@ -212,7 +212,7 @@ if mods["space-age"] then
         })
     end
 
-    if mods["BrassTacks"] or mods["IfNickel"] then
+    if 1 == 2 then
         data.raw.item["gold-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
 
         data:extend({
