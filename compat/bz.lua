@@ -12,8 +12,10 @@ if mods["bzsilicon"] then
     if data.raw.item["silicon-wafer"] then
         rm.ReplaceIngredientProportional("integrated-circuit", "copper-plate", "silicon-wafer", 0.5)
         rm.AddProduct("silicon-wafer", {type="fluid", name="depleted-acid", amount=50, ignored_by_productivity=50})
+        rm.AddIngredient("integrated-circuits-from-nitric-acid", "silicon-wafer", 1)
     else
         rm.ReplaceIngredientProportional("integrated-circuit", "copper-plate", "silicon", 0.5)
+        rm.AddIngredient("integrated-circuits-from-nitric-acid", "silicon", 1)
     end
 
     --quartz oscillator

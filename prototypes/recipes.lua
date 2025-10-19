@@ -493,6 +493,46 @@ if mods["space-age"] then
     if misc.difficulty == 3 then
         rm.AddIngredient("neural-microchip", "jelly", 1)
     end
+
+    if mods["Paracelsin"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "integrated-circuits-from-nitric-acid",
+                category = "electrochemistry",
+                additional_categories = {"electromagnetics"},
+                icons = {
+                    {
+                        icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__Paracelsin-Graphics__/graphics/icons/nitric-acid.png",
+                        icon_size = 64,
+                        scale = 0.25,
+                        shift = {-8, -8}
+                    }
+                },
+                ingredients = {
+                    {type="item", name="gold-wire", amount=6},
+                    {type="item", name="zinc-solder", amount=2},
+                    {type="item", name="plastic-bar", amount=1},
+                    {type="fluid", name="nitric-acid", amount=1},
+                },
+                results = {
+                    {type="item", name="integrated-circuit", amount=2},
+                    {type="fluid", name="depleted-acid", amount=1}
+                },
+                subgroup = "nitric-acid-and-nitrogen",
+                order = "fa",
+                main_product = "integrated-circuit",
+                lasermill_dlc = {helium = -1, unlock="electrochemical-plant"},
+                energy_required = 1,
+                allow_productivity = true,
+                enabled = false
+            }
+        })
+    end
 end
 
 if tune_up_data then

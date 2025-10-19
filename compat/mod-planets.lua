@@ -31,3 +31,41 @@ end
 --as I understand it cerys is a meticulously designed puzzle, adding explicit compat would almost be like adding compat with ultracube
 
 --arrakis, shattered planet: incomplete
+
+if mods["Paracelsin"] then
+    rm.ReplaceIngredientProportional("paracelsin-processing-units-from-nitric-acid", "electronic-circuit", "integrated-circuit", 1, data.raw.item["cooling-fan"] and 16 or 8)
+    rm.AddProduct("paracelsin-processing-units-from-nitric-acid", "depleted-acid", 5)
+    tm.AddUnlock("electrochemical-plant", "integrated-circuits-from-nitric-acid")
+    table.insert(data.raw["simple-entity"]["crashed-fulgoran-pod"].minable.results, {type="item", name="gold-wire", amount_min=4, amount_max=10})
+    table.insert(data.raw["simple-entity"]["big-metallic-rock"].minable.results, {type="item", name="gold-powder", amount_min=1, amount_max=7})
+
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("electric-coil", "iron-gear-wheel", "semiboloid-stator", 0.4)
+    end
+    if misc.difficulty == 1 then
+        rm.ReplaceIngredientProportional("electric-coil", "copper-cable", "gold-wire", 0.8)
+    else
+        rm.ReplaceIngredientProportional("electric-coil", "copper-cable", "heavy-cable", 0.2)
+        rm.ReplaceIngredientProportional("electrochemical-plant", "copper-cable", "heavy-cable", 0.25)
+        rm.AddIngredient("mechanical-plant", "stepper-motor", 10)
+    end
+
+    --gold can be obtained from copper ore but we need more of it
+    rm.AddProduct("tetrahedrite-processing", "copper-ore", 1)
+
+
+    data.raw.recipe["nitrogen-nitric-acid"].icons = {
+        {
+            icon = "__Paracelsin-Graphics__/graphics/icons/nitric-acid.png",
+            icon_size = 64
+        },
+        {
+            icon = "__Paracelsin-Graphics__/graphics/icons/nitrogen.png",
+            icon_size = 64,
+            scale = 0.25,
+            shift = {-8, -8}
+        }
+    }
+    data.raw.recipe["nitrogen-nitric-acid"].icon = nil
+    data.raw.recipe["nitrogen-nitric-acid"].icon_size = nil
+end
