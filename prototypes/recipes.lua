@@ -526,7 +526,7 @@ if mods["space-age"] then
                 subgroup = "nitric-acid-and-nitrogen",
                 order = "fa",
                 main_product = "integrated-circuit",
-                lasermill_dlc = {helium = -1, unlock="electrochemical-plant"},
+                lasermill_dlc = {helium = -1, unlock="electrochemical-plant", icon_offset={8, -8}},
                 energy_required = 1,
                 allow_productivity = true,
                 enabled = false
