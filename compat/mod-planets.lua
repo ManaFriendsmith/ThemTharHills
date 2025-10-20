@@ -53,6 +53,7 @@ if mods["Paracelsin"] then
     --gold can be obtained from copper ore but we need more of it
     rm.AddProduct("tetrahedrite-processing", "copper-ore", 1)
 
+    rm.AddProduct("zinc-leaching", "depleted-acid", 5)
 
     data.raw.recipe["nitrogen-nitric-acid"].icons = {
         {

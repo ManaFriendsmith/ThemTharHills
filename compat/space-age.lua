@@ -85,6 +85,7 @@ if mods["LasingAround"] and misc.difficulty > 1 then
     rm.AddIngredient("lavaser", "heavy-cable", 1)
     rm.AddIngredient("bioluminaser", "heavy-cable", 1)
     rm.AddIngredient("electrolaser", "heavy-cable", 1)
+    rm.AddIngredient("galvaser", "heavy-cable", 1)
 end
 
 if misc.difficulty == 3 and rm.GetIngredientCount("electromagnetic-science-pack", "electric-engine-unit") == 0 then
